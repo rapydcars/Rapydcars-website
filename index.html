@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rapyd </title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+           emailjs.init('user_52WPVo7aLHj9ezYgwzKA0');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                //reset();
+                
+                // generate the contact number value
+                this.contact_number.value = Math.random() * 100000 | 0;
+               
+                this.response = "Information successfully submitted."
+                document.getElementById("myText").innerHTML = this.response;
+                emailjs.sendForm('rapyd_email', 'template_v1xrnpi', this);
+
+                document.getElementById('name').value=''; 
+                document.getElementById('number').value=''; 
+                document.getElementById('state').value=''; 
+            });
+        }
+    </script>
+
+    <!--Main style-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--Hamburger Menu-->
+    <link rel="stylesheet" href="css/menu.css" />
+    <!--hover style-->
+    <link rel="stylesheet" href="hoverlib/css/hover.css">
+    <!--hover style-->
+    <link rel="stylesheet" href="css/select.css">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="images/png/print-blue.png">
+</head>
+
+<body>
+
+
+<div class="main-content">
+    <section class="hero" id="hero">
+        <nav>
+            <div class="nav-content">
+                <div class="logo-box">
+                    <img src="images/svg/logo-main.svg" alt="">
+                </div>
+                <div class="nav-links">
+                    <ul class="nav-list">
+                        <li  class="link hvr-float">
+                            <a href="#contact"> Contact Us</a>
+                        </li>
+                        <li  class="link hvr-float">
+                            <a href="#about"> About Rapyd </a>
+                        </li>
+                        <li class="hvr-bob">
+                            <a href="#waiting">
+                                <button class="apply-btn">Apply </button> 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+             <!--Mobile Menu-->
+            <div class="menu-wrap">
+                <input type="checkbox" class="toggler"  />
+                <div class="hamburger" >
+                <div class="linez" id="toggle"></div>
+                </div>
+                <div class="menu">
+                <div>
+                   
+                    <div >
+                        <div class="mobile-logo">
+                            <img src="images/svg/mobile-logo.svg" alt="">
+                        </div>
+                        
+                    <ul>
+                        <li onclick=drop()><a href="#contact">Contact Us</a></li>
+                        <li  onclick=drop()><a href="#about">About Rapyd</a></li>
+                        <li  onclick=drop()><a href="#waiting" ><button class="mobile-btn">Apply</button></a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    It's your Car <br> Own it
+                </h1>
+                <p class="hero-desc">
+                    We provide people better and faster ways to get <br>
+                     cars they need for commercial purposes. 
+                </p>
+                <a href="#waiting">
+                    <button class="hero-btn">
+                        Apply
+                    </button>
+                </a>
+            </div>
+            <div class="hero-images hvr-sink ">
+                <img class="cars-w " src="images/svg/cars-2.svg" alt="">
+                <img class="cars-m" src="images/svg/cars-m.svg" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <section class="eligibility" id="eligibility">
+        <div class="eligibility-content">
+            <div class="eligibility-text">
+                <h1 class="elig">Eligibility</h1>
+                <p class="elig-desc">
+                    To apply for a hire purchase car from us, 
+                    you'll need to meet our<br> eligibility criteria,
+                     and we continue to review it 
+                     on an ongoing<br> basis to keep up with 
+                     industry best practices. 
+                </p>
+                <p class="elig-desc">
+                    Our basic eligibility requirements are 
+                    listed below, however our<br> compliance team
+                     may request for more information during 
+                     the<br> application process.
+                </p>
+                <p class="elig-desc-m">
+                    To apply for a hire purchase car from us, 
+                    you'll need to meet our eligibility criteria,
+                     and we continue to review it 
+                     on an ongoing basis to keep up with 
+                     industry best practices. 
+                </p>
+                <p class="elig-desc-m">
+                    Our basic eligibility requirements are 
+                    listed below, however our compliance team
+                     may request for more information during 
+                     the application process.
+                </p>
+                <ul class="elig-list">
+                    <li class="elig-item">Drivers must have a clean and no criminal record.</li>
+                    <li class="elig-item">Drivers must be over 25 years with minimum a of 5 years<br> driving experience.</li>
+                    <li class="elig-item">Drivers must be able to read and write in English language.</li>
+                    <li class="elig-item">Drivers must have a valid driver’s license and have a good <br>knowledge of Abuja terrain.</li>
+                    <li class="elig-item"> Drivers must be able to make a security deposit.</li>
+                    <li class="elig-item">Drivers must have an eligible guarantor with a clean and no <br> criminal record.</li>
+
+                </ul>
+            </div>
+            <div class="eligibility-pic">
+                <div class="eligible-driver">
+                    <img src="images/svg/driver.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="available" id="available">
+        <div class="available-content">
+            <div class="avail-title">
+                <h1 class="av-title">Available Cars</h1>
+            </div>
+            <div class="avail-cars">
+                <div class="avail-left">
+                    <div class="car-box">
+                        <img src="images/svg/matrix.svg" alt="">
+                        <p>Toyota Matrix 2004</p>
+                    </div>
+                    <div class="car-box">
+                        <img src="images/svg/camry.svg" alt="">
+                        <p>Toyota Camry 2003</p>
+                    </div>
+                </div>
+                <div class="avail-right">
+                    <div class="car-box">
+                        <img src="images/svg/corolla.svg" alt="">
+                        <p>Toyota Corolla 2004</p>
+                    </div>
+                    <div class="car-box">
+                        <img src="images/svg/civic.svg" alt="">
+                        <p>Honda Civic 2004</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-left">
+                <img src="images/svg/contact-icons.svg" alt="">
+            </div>
+            <div class="contacts-right">
+                <h1 class="contact-title">Contact Us</h1>
+                <p>To get a hire purchase car from us, or discuss how we can work together, reach out to us. </p>
+                <p>
+                    For drivers: call us on 080 3300 0345 or Message us on WhatsApp. 
+                    <br>For corporate and partnership enquires, send us an email: info@getrapyd.com </p>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="waiting" id="waiting">
+        <div class="waiting-content">
+            <div class="waiting-left">
+                <h1 class="waiting-title"> <span>Waiting List</span></h1>
+                <p>We are receiving high volume of applications at the moment.</p>
+                <p>If you are interested in getting a car from us for commercial<br> purposes, 
+                    please fill in the following details and we would get<br> back to you.
+                </p>
+                <p>
+                    We are currently accepting applications only from Abuja and <br>Lagos drivers.
+                </p>
+            </div>
+            <div class="waiting-right">
+                <form class="waiting-form" id="contact-form">
+                    <div>
+                        <input type="hidden" name="contact_number">
+                        <span class="form-label">Name</span><br />
+                        <input placeholder="Type name"
+                         name="user_name" id="name"
+                        class="form-fields" type="text" required 
+                      />
+                    </div>
+                    <div>
+                        <span class="form-label">Phone number</span><br />
+                        <input placeholder="Type phone number"
+                         name="user_phone" id="number"
+                        class="form-fields" type="text"  required 
+                      />
+                    </div>
+                    <div class="f-select">
+                        <!---
+                        <span class="form-label">State</span><br />
+                        <input placeholder="Type state"
+                         name="state" id="state"
+                        class="form-fields" type="text"  required 
+                      />-->
+                      <span class="form-label">State</span><br>
+                      <select id="state" name="state" 
+                      class="form-fields">
+                        <option value="Lagos">Lagos</option>
+                        <option value="Abuja">Abuja</option>
+                      </select>
+                    </div>
+                   
+                    <div>               
+                        <input type="submit" class="form-btn" value="Send" />
+                     </div>
+                     <p id="myText" class="response"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <secttion class="about" id="about">
+        <div class="about-content">
+            <h1 class="about-title">About Us</h1>
+            <div class="about-body">
+                <p>
+                    Commercial drivers borrow cars for a certain fee. It’s an established system that works but doesn’t <br>
+                    necessarily offer good value to drivers.
+                </p>
+                <p>
+                    We believe commercial drivers should be working harder for themselves and not for someone else, so we founded Rapyd on that principle. 
+                    We created a platform and began helping people who need cars for commercial purposes, 
+                    providing better value to them. It’s as simple as that.
+                </p>
+                <p>
+                    We’re not a replacement for banks that give car loans,
+                     and we don’t pretend to offer the lounge service or marble foyer that may 
+                     be experienced elsewhere. We exist for commercial drivers who would like to own the 
+                    vehicle once all necessary payments have been made.
+                </p>
+                <p>
+                    At the start of the agreement a deposit will be paid. 
+                    The higher the initial deposit the lower the monthly payments will be. 
+                    The fixed regular monthly payment and the term length will then be agreed 
+                    depending on the driver’s circumstances and preferences. 
+                    With no deferred lump sum to pay at the end, the driver will 
+                    become the legal owner of the vehicle once all the monthly payments have been paid.
+                </p>
+            </div>
+        </div>
+    </secttion>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo-box">
+                    <img src="images/svg/footer-logo.svg" alt="">
+                    <p class="copyright-text">&copy;2020 Rapyd</p>
+                </div>
+                <div class="footer-icons">
+                    <img src="images/svg/twitter-icon.svg" alt="">
+                    <img src="images/svg/linked-icon.svg" alt="">
+                    <img src="images/svg/facebook-icon.svg" alt="">
+                    <img src="images/svg/ig-icon.svg" alt="">
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-nav">
+                     <ul class="nav-list">
+                        <div class="nav-add">
+                            <li  class="link hvr-float" >
+                                <a href="#contact"> Contact Us</a>
+                            </li>
+                            <li  class="link hvr-float">
+                                <a href="#about"> About Rapyd </a>
+                            </li>
+                        </div>
+                        
+                        <li >
+                            <a href="#waiting">
+                                <button class="apply-btn">Apply </button> 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+   
+
+<script src="js/main.js"></script>
+<script>
+    function myFunction() {
+       var button = document.getElementById("toggle");
+       button.classList.toggle("toggler-2");
+    }
+    function drop() {
+        setTimeout(location.reload.bind(location), 200);
+    }
+</script>
+
+</body>
+</html>
